@@ -13,10 +13,10 @@ Want to disable the tests? Want to learn more? See ALKiln's docs: https://suffol
 Scenario: main.yml runs
   Given I start the interview at "main.yml"
   And the maximum seconds for each Step in this Scenario is 50
-  And the user gets to "waiting" with this data:
+  And the user gets to "waiting screen" with this data:
     | var | value | trigger |
+    | welcome | True |  |
     | person.name.first | test |  |
     | person.name.last | test |  |
     | person.name.middle |  |  |
     | person.name.suffix |  |  |
-    | welcome | True |  |
