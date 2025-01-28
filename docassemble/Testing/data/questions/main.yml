@@ -1,0 +1,43 @@
+metadata:
+  title: Testing Example
+  comment: This interview is just an example for automated tests.
+  authors:
+    - Jim Graszer
+---
+include:
+  - docassemble.AssemblyLine:assembly_line.yml
+---
+objects:
+  - person: ALIndividual
+---
+## interview order
+mandatory: True
+code: |
+  welcome
+  person.name.first
+  waiting
+
+---
+id: welcome
+question: |
+  Welcome
+subquestion: |
+  This is a welcome screen before continuing.
+continue button field: welcome
+---
+id: person's name
+sets:
+  - person.name.first
+  - person.name.last
+question: |
+  Person's name
+fields:
+  - code: |
+      person.name_fields()
+---
+id: waiting screen
+event: waiting
+question: |
+  Waiting screen
+subquestion: |
+  This is the end of the example interview.
