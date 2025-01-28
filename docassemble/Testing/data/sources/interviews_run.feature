@@ -12,8 +12,11 @@ Want to disable the tests? Want to learn more? See ALKiln's docs: https://suffol
 @main
 Scenario: main.yml runs
   Given I start the interview at "main.yml"
-  #And the maximum seconds for each Step in this Scenario is 50
-  #And I get to the question id "downloads" with this data:
-  #  | var | value | trigger |
-  #  | users[0].name.first | Uli | users[0].name.first |
-  #  | users[0].name.last | User1 | users[0].name.first |
+  And the maximum seconds for each Step in this Scenario is 50
+  And the user gets to "waiting" with this data:
+    | var | value | trigger |
+    | person.name.first | test |  |
+    | person.name.last | test |  |
+    | person.name.middle |  |  |
+    | person.name.suffix |  |  |
+    | welcome | True |  |
